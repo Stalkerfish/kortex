@@ -1,0 +1,29 @@
+use_cases:
+  - coding
+  - reasoning
+output_dir: ./benchmark_runs
+cache_dir: ./.benchmark_cache
+max_models: 4
+parallelism: 1
+iterations: 1
+ollama_binary: ollama
+llmfit_binary: llmfit
+weights:
+  correctness: 0.45
+  speed: 0.20
+  context_performance: 0.15
+  stability: 0.20
+task_settings:
+  code_edit:
+    enabled: true
+  reasoning:
+    enabled: true
+  long_context:
+    enabled: true
+    repeat_factor: 160
+  iterative_loop:
+    enabled: true
+    turns: 4
+runner:
+  timeout_seconds: 180
+  env: {}
